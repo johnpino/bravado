@@ -6,16 +6,20 @@
         <SearchIcon class="icon" />
       </div>
     </div>
-    <div>List</div>
+    <div>
+      <ProfileCard />
+    </div>
   </div>
 </template>
 
 <script>
 import { SearchIcon } from "@heroicons/vue/outline";
+import ProfileCard from "~~/components/ProfileCard.vue";
 
 export default {
   components: {
     SearchIcon,
+    ProfileCard,
   },
   setup() {},
 };
@@ -23,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .profiles {
-  width: 30rem;
+  width: 40rem;
   height: 30rem;
   padding: 1rem;
   background-color: white;
