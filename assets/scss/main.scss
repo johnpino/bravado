@@ -1,3 +1,36 @@
 body {
-    background-color: #e5e5e5;
+  margin: 0;
+  height: 100vh;
+  background-color: #e5e5e5;
+
+  #__nuxt {
+    height: 100%;
+  }
+}
+
+input {
+  border: 0;
+  height: 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 3px 0px #e5e5e5;
+  background-color: #f6f6f6;
+}
+
+.input-icon {
+  position: relative;
+
+  input {
+      padding-left: 2rem;
+  }
+
+  .icon {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1rem;
+    width: 1rem;
+  }
 }
