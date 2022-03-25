@@ -2,7 +2,7 @@
   <div class="profiles">
     <div class="profiles--search">
       <div class="input-icon">
-        <input type="text" placeholder="Search..." />
+        <input v-model="query" type="text" placeholder="Search..." />
         <SearchIcon class="icon" />
       </div>
     </div>
@@ -16,6 +16,7 @@
           :role="profile.title"
           :location="profile.address"
           :imgSrc="profile.avatar"
+          :query="query"
         />
       </PerfectScrollbar>
     </div>
@@ -40,6 +41,8 @@ export default {
   setup() {
     const profiles = ref();
 
+    const query = ref('')
+
     fetch(
       "https://gist.githubusercontent.com/allaud/093aa499998b7843bb10b44ea6ea02dc/raw/c400744999bf4b308f67807729a6635ced0c8644/users.json"
     )
@@ -48,6 +51,7 @@ export default {
 
     return {
       profiles,
+      query
     };
   },
 };

@@ -5,39 +5,56 @@
     </div>
     <div class="profile-card--information">
       <div class="profile-card--heading">
-        <h2 class="profile-card--name">{{ name }}</h2>
-        <div class="profile-card--email">{{ email }}</div>
+        <h2 class="profile-card--name">
+          <Highlighter :textToHighlight="name" :searchWords="[query]" />
+        </h2>
+        <div class="profile-card--email">
+          <Highlighter :textToHighlight="email" :searchWords="[query]" />
+        </div>
       </div>
-      <h3 class="profile-card--role">{{ role }}</h3>
-      <p class="profile-card--location">{{ location }}</p>
+      <h3 class="profile-card--role">
+        <Highlighter :textToHighlight="role" :searchWords="[query]" />
+      </h3>
+      <p class="profile-card--location">
+        <Highlighter :textToHighlight="location" :searchWords="[query]" />
+      </p>
       <button class="profile-card--cta">Marks as suitable</button>
     </div>
   </div>
 </template>
 
 <script>
+import Highlighter from "vue-highlight-words";
+
 export default {
+  components: {
+    Highlighter,
+  },
   props: {
-      name: {
-          type: String,
-          required: true
-      },
-      email: {
-          type: String,
-          required: true
-      },
-      role: {
-          type: String,
-          required: true
-      },
-      location: {
-          type: String,
-          required: true
-      },
-      imgSrc: {
-          type: String,
-          required: true
-      }
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    role: {
+      type: String,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
+    },
+    imgSrc: {
+      type: String,
+      required: true,
+    },
+    query: {
+      type: String,
+      required: false,
+    },
   },
   setup() {},
 };
@@ -48,13 +65,13 @@ export default {
   display: flex;
   height: 10rem;
   background-color: #f6f6f6;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 
   &--image {
     flex: 0 0 10rem;
     background-color: rgb(175, 175, 175);
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
 
     img {
       object-fit: cover;
