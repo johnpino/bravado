@@ -11,6 +11,7 @@
     "sass-loader": "^12.6.0"
   },
   "dependencies": {
-    "@heroicons/vue": "^1.0.6"
+    "@heroicons/vue": "^1.0.6",
+    "reset-css": "^5.0.1"
   }
 }
