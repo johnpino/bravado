@@ -48,9 +48,13 @@ export default {
   display: flex;
   height: 10rem;
   background-color: #f6f6f6;
+  border-radius: .25rem;
 
   &--image {
     flex: 0 0 10rem;
+    background-color: rgb(175, 175, 175);
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
 
     img {
       object-fit: cover;
