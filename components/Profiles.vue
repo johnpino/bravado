@@ -11,6 +11,11 @@
         <ProfileCard
           v-for="(profile, index) in profiles"
           :key="`${index}-${profile.name}`"
+          :name="profile.name"
+          :email="profile.email"
+          :role="profile.title"
+          :location="profile.address"
+          :imgSrc="profile.avatar"
         />
       </PerfectScrollbar>
     </div>

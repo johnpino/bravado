@@ -1,19 +1,47 @@
 <template>
   <div class="profile-card">
     <div class="profile-card--image">
-      <img src="https://via.placeholder.com/1000x1500" />
+      <img :src="imgSrc" />
     </div>
     <div class="profile-card--information">
       <div class="profile-card--heading">
-        <h2 class="profile-card--name">Josie Waters</h2>
-        <div class="profile-card--email">adriel@larson.io</div>
+        <h2 class="profile-card--name">{{ name }}</h2>
+        <div class="profile-card--email">{{ email }}</div>
       </div>
-      <h3 class="profile-card--role">Investor Integration Supervisor</h3>
-      <p class="profile-card--location">22745 O'Kon Parks, Ernsermouth</p>
+      <h3 class="profile-card--role">{{ role }}</h3>
+      <p class="profile-card--location">{{ location }}</p>
       <button class="profile-card--cta">Marks as suitable</button>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+      name: {
+          type: String,
+          required: true
+      },
+      email: {
+          type: String,
+          required: true
+      },
+      role: {
+          type: String,
+          required: true
+      },
+      location: {
+          type: String,
+          required: true
+      },
+      imgSrc: {
+          type: String,
+          required: true
+      }
+  },
+  setup() {},
+};
+</script>
 
 <style lang="scss">
 .profile-card {
@@ -42,7 +70,7 @@
   }
 
   &--name {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
@@ -59,11 +87,11 @@
   }
 
   &--cta {
-      background: transparent;
-      color: #22a57e;
-      text-transform: uppercase;
-      font-size: 1.2rem;
-      border: none;
+    background: transparent;
+    color: #22a57e;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: none;
   }
 }
 </style>
