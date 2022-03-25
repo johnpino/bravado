@@ -18,8 +18,8 @@
 <style lang="scss">
 .profile-card {
   display: flex;
-  gap: 1rem;
   height: 10rem;
+  background-color: #f6f6f6;
 
   &--image {
     flex: 0 0 10rem;
@@ -33,6 +33,7 @@
 
   &--information {
     flex: 1 0 auto;
+    padding: 1rem;
   }
 
   &--heading {
